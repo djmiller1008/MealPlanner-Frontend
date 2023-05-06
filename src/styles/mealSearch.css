@@ -1,0 +1,121 @@
+.search-container {
+    margin-top: 2rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 8rem; 
+}
+
+.search-input {
+    background-color:  rgb(238, 238, 238);
+    padding: 0.5rem 1.25rem 0.525rem;
+    color: black;
+    border: none;
+    border-radius: 1rem;
+    width: 90%;
+    font-size: 1.15rem;
+}
+
+.recipe-search-input-section {
+    margin-bottom: 0.5rem;
+}
+
+.recipe-search-filters-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.search-filter-select {
+    background-color:  rgb(238, 238, 238);
+    padding: 0.5rem 1rem 0.525rem;
+    border: none;
+    border-radius: 1rem;
+    height: 2rem;
+}
+
+.search-button {
+    font-size: 1.15rem;
+}
+
+.search-results-div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(248, 248, 243);
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px;
+}
+
+.searchlist-item-div {
+    background-color: white;
+    border-width: 1px;
+    border-color: rgb(230, 230, 212);
+    border-style: solid;
+    margin-bottom: 1rem;
+    width: 10rem;
+    height: 15rem;
+    background-size: cover;
+}
+
+.searchlist-item-div:hover {
+    cursor: pointer;
+}
+
+.searchlist-item-link {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: black;
+}
+
+.searchlist-item-image {
+    width: 10rem;
+    height: 9rem;
+    border-bottom: 1px;
+    border-color: rgb(230, 230, 212);
+    border-style: solid;
+}
+
+.searchlist-item-text-section {
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+.searchlist-item-text {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.error-div {
+    text-align: center;
+}
+
+@media (min-width: 780px) {
+    .recipe-search-filters-section {
+        justify-content: flex-start;
+    }
+
+    .search-filter-select {
+        margin-right: 1rem;
+    }
+
+    .search-results-div {
+        justify-content: flex-start;
+    }
+
+    .searchlist-item-div {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

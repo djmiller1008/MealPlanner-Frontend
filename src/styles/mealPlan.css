@@ -1,0 +1,191 @@
+.mealplans-display-container {
+    height: 100%;
+    min-height: 100vh;
+    background: rgb(248, 248, 243);
+    padding: 3rem;
+}
+
+.mealplans-display-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.mealplans-content-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-meal-plan-button {
+    font-size: 1.15rem;
+    padding: 0.6rem 1.5rem !important;
+}
+
+.new-meal-plan-button:hover {
+    cursor: pointer;
+}
+
+.new-mealplan-container {
+    background: rgb(248, 248, 243);
+    padding: 3rem 1rem;
+    height: 100vh;
+}
+
+.create-mealplan-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.mealplan-items-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.mealplan-display-item-container {
+    display: flex;
+    color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-width: 1px;
+    border-color: rgb(230, 230, 212);
+    border-style: solid;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    width: 12rem;
+    height: 8rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px;
+}
+
+.mealplan-item-title {
+    margin-bottom: 0.75rem;
+}
+
+.mealplan-display-item-container:hover {
+    cursor: pointer;
+    background-color: #5ebd21;
+    color: white;
+}
+
+.meals-display-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mealplan-item-container {
+    display: flex;
+    background-color: white;
+    width: 16rem;
+    height: fit-content;
+    word-wrap: break-word;
+    border-radius: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.mealplan-item-image {
+    height: 6.5rem;
+    width: 6.5rem;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+}
+
+.mealplan-show-container {
+    height: 100vh;
+    background-color: rgb(248, 248, 243);
+}
+
+.mealplan-show-button {
+    display: flex;
+    margin-left: 1rem;
+}
+
+.mealplan-show-title-container {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.mealplan-item-text-section {
+   height: 6.5rem;
+   width: 9.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.delete-meal-button {
+    align-self: baseline;
+    margin-top: 0.2rem;
+    margin-right: 0.35rem;
+    z-index: 99;
+}
+
+.delete-meal-button:hover {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mealplan-item-text:hover {
+    color: #5ebd21;
+    cursor: pointer;
+}
+
+.mealplan-item-image:hover {
+    cursor: pointer;
+}
+
+.delete-mealplan-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.delete-mealplan-button {
+    background-color: transparent;
+    font-size: 1.15rem;
+}
+
+.delete-mealplan-button:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 780px) {
+    .mealplans-content-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .new-mealplan-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .create-mealplan-form {
+        width: 25rem;
+    }
+
+    .meals-display-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: normal;
+        padding: 2rem;
+    }
+
+    .mealplan-item-container {
+        margin-right: 2rem;
+    }
+
+    .mealplan-items-container {
+        justify-content: center;
+    }
+}
