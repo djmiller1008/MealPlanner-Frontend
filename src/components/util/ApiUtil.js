@@ -3,6 +3,8 @@ import { API_KEY } from "./keys_prod";
 import Cookies from "js-cookie";
 import { parseRegisterError } from "./ParseErrorUtil";
 
+const BACKEND_URL = 'https://mealtime-backend.herokuapp.com';
+
 const getSpringRequestConfig = (token) => {
     return { headers: {
         'Authorization': `Bearer ${token}`,
@@ -69,7 +71,7 @@ export const fetchRecipeNutritionInfo = async recipeId => {
 }
 
 export const login = async user => {
-    const response = await axios.post('api/auth/login', user).catch(error => {
+    const response = await axios.post(`${BACKEND_URL}/api/auth/login`, user).catch(error => {
         if (error.response.status === 401) {
             return {
                 user: null,
@@ -81,18 +83,18 @@ export const login = async user => {
 }
 
 export const demoLogin = async () => {
-    const response = await axios.post('api/auth/demo');
+    const response = await axios.post(`${BACKEND_URL}/api/auth/demo`);
     return response;
 }
 
 export const logout = async () => {
-    const response = await axios.get('/api/auth/logout');
+    const response = await axios.get(`${BACKEND_URL}/api/auth/logout`);
     Cookies.remove("jwt");
     return response;
 }
 
 export const register = async user => {
-    const response = await axios.post('api/users/register', user).catch(error => {
+    const response = await axios.post(`${BACKEND_URL}/api/users/register`, user).catch(error => {
         if (error.response.status === 401) {
             return {
                 user: null,
@@ -110,41 +112,41 @@ export const register = async user => {
 }
 
 export const addUserRecipe = async recipeData => {
-    const response = await axios.post('/api/user-meals', recipeData);
+    const response = await axios.post(`${BACKEND_URL}/api/user-meals`, recipeData);
     return response;
 } 
 
 export const createUserMealPlan = async (mealPlanData, token) => {
-    const response = await axios.post('api/user-mealplans', mealPlanData, getSpringRequestConfig(token));
+    const response = await axios.post(`${BACKEND_URL}/api/user-mealplans`, mealPlanData, getSpringRequestConfig(token));
     return response;
 }
 
 export const fetchUserMealPlans = async (token) => {
-    const response = await axios.get('api/user-mealplans', getSpringRequestConfig(token));
+    const response = await axios.get(`${BACKEND_URL}api/user-mealplans`, getSpringRequestConfig(token));
     return response;
 }
 
 export const addMealToMealPlan = async (mealData, token) => {
-    const response = await axios.post('api/user-meals', mealData, getSpringRequestConfig(token));
+    const response = await axios.post(`${BACKEND_URL}api/user-meals`, mealData, getSpringRequestConfig(token));
     return response;
 }
 
 export const fetchUserMealPlanMeals = async (mealPlanId, token) => {
-    const response = await axios.get(`/api/user-mealplans/${mealPlanId}`, getSpringRequestConfig(token));
+    const response = await axios.get(`${BACKEND_URL}/api/user-mealplans/${mealPlanId}`, getSpringRequestConfig(token));
     return response;
 } 
 
 export const deleteMealFromMealPlan = async (mealPlanId, mealId, token) => {
-    const response = await axios.delete(`/api/user-meals/${mealPlanId}/${mealId}`, getSpringRequestConfig(token));
+    const response = await axios.delete(`${BACKEND_URL}/api/user-meals/${mealPlanId}/${mealId}`, getSpringRequestConfig(token));
     return response;
 }
 
 export const deleteMealPlan = async (mealPlanId, token) => {
-    const response = await axios.delete(`/api/user-mealplans/${mealPlanId}`, getSpringRequestConfig(token));
+    const response = await axios.delete(`${BACKEND_URL}/api/user-mealplans/${mealPlanId}`, getSpringRequestConfig(token));
     return response;
 }
 
 export const validateJwtToken = async token => {
-    const response = await axios.get(`/api/auth/validate?token=${token}`, getSpringRequestConfig(token));
+    const response = await axios.get(`${BACKEND_URL}/api/auth/validate?token=${token}`, getSpringRequestConfig(token));
     return response;
 }
